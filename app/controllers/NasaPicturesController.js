@@ -22,5 +22,7 @@ export class NasaPicturesController {
   drawNasaPicture() {
     const picture = AppState.picture
     setHTML('picture-of-the-day', picture.detailsHTMLTemplate)
+
+    document.body.style.backgroundImage = `url(${picture.imgUrl})`
   }
 }
