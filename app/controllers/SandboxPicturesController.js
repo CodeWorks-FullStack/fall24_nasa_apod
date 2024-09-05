@@ -31,8 +31,18 @@ export class SandboxPicturesController {
   }
 
   async deletePicture(pictureId) {
-    console.log('delete!', pictureId);
+    try {
+      // NOTE don't forget to await Pop Confirm
+      const wantsToDelete = await Pop.confirm("Are you sure you want to delete this picture?")
 
+      if (!wantsToDelete) return
+
+      await sandboxPicturesService.deletePicture(pictureId)
+
+    } catch (error) {
+      Pop.error(error)
+      console.error(error)
+    }
   }
 
   drawMyPictures() {

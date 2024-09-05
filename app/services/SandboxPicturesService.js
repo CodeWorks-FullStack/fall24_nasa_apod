@@ -3,6 +3,10 @@ import { Picture } from "../models/Picture.js";
 import { api } from "./AxiosService.js"
 
 class SandboxPicturesService {
+  async deletePicture(pictureId) {
+    const response = await api.delete(`api/apods/${pictureId}`)
+    console.log('DELETED PICTURE', response.data);
+  }
   async getMyPictures() {
     const response = await api.get('api/apods')
     console.log('GOT MY PICTURES 📷🌌🛰️', response.data);
