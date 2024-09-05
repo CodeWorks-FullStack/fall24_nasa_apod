@@ -25,6 +25,14 @@ export class Picture {
       </div>
     `
   }
+
+  get listHTMLTemplate() {
+    return `
+     <div class="mb-3">
+      <img src="${this.imgUrl}" alt="" class="my-picture rounded">
+    </div>
+    `
+  }
 }
 
 const nasaData = {

@@ -41,3 +41,9 @@ footer {
 .magic-text:hover .secret-text {
   opacity: unset;
 }
+
+.my-picture {
+  width: 100%;
+  height: 23vh;
+  object-fit: cover;
+}

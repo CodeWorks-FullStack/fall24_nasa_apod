@@ -21,6 +21,10 @@
     <nav class="navbar navbar-expand px-2">
       <!-- TODO update value and max with today's date -->
       <input id="date-picker" onchange="app.NasaPicturesController.getNasaPictureByDate()" type="date" min="1995-06-16">
+      <button class="btn btn-outline-light ms-3" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDark" aria-controls="offcanvasDark" title="Browse your saved photos">
+        <i class="mdi mdi-image-album"></i>
+      </button>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -60,6 +64,20 @@
   <footer class="text-end p-2">
     <small><span id="picture-copyright"></span></small>
   </footer>
+
+  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDark"
+    aria-labelledby="offcanvasDarkLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasDarkLabel">Your Saved Photos</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- STUB list template -->
+      <!-- <div class="mb-3">
+        <img src="https://apod.nasa.gov/apod/image/2302/SunHalphaC_Ergun_2065.jpg" alt="" class="my-picture rounded">
+      </div> -->
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
