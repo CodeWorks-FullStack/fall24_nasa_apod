@@ -8,9 +8,8 @@ class SandboxPicturesService {
     console.log('GOT MY PICTURES 📷🌌🛰️', response.data);
     const pictures = response.data.map(pictureData => new Picture(pictureData))
     AppState.myPictures = pictures
-    console.log('pictures!', AppState.myPictures);
-
   }
+
   async savePicture() {
     const response = await api.post('api/apods', AppState.picture)
     console.log('SAVED PICTURE 💾🌌📷', response.data);
