@@ -9,6 +9,7 @@ export class SandboxPicturesController {
   async savePicture() {
     try {
       await sandboxPicturesService.savePicture()
+      Pop.success('Picture was saved!')
     } catch (error) {
       Pop.error(error)
       console.error(error);
