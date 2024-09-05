@@ -19,6 +19,8 @@ body {
 .secret-text {
   opacity: 0;
   transition: all 3s;
+  font-weight: 200;
+  font-size: 1.2rem;
 }
 
 .magic-text:hover .secret-text {

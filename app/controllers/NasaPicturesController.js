@@ -8,6 +8,7 @@ export class NasaPicturesController {
     console.log('🌌🛰️🎮');
     AppState.on('picture', this.drawNasaPicture)
     this.getNasaPicture()
+    this.setDatePicker()
   }
 
   async getNasaPicture() {
@@ -36,5 +37,12 @@ export class NasaPicturesController {
 
     document.body.style.backgroundImage = `url(${picture.imgUrl})`
     setHTML('picture-copyright', '©️ ' + picture.copyright)
+  }
+
+  setDatePicker() {
+    const datePickerElem = document.getElementById('date-picker')
+    const todaysDate = new Date().toISOString().substring(0, 10)
+    datePickerElem.value = todaysDate
+    datePickerElem.max = todaysDate
   }
 }
