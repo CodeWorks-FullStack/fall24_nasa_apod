@@ -6,6 +6,7 @@ export class Picture {
     this.imgUrl = data.hdurl || data.imgUrl
     this.mediaType = data.media_type || ''
     this.title = data.title || ''
+    this.id = data.id || ''
   }
 
   get detailsHTMLTemplate() {
@@ -28,8 +29,10 @@ export class Picture {
 
   get listHTMLTemplate() {
     return `
-     <div class="mb-3">
-      <img onclick="app.NasaPicturesController.getNasaPictureByDate('${this.date}')" role="button" title="Display this picture" src="${this.imgUrl}" alt="${this.author} took this picture on ${this.date}" class="my-picture rounded">
+     <div class="mb-3 position-relative p-2">
+      <img  src="${this.imgUrl}" alt="${this.author} took this picture on ${this.date}" class="my-picture rounded">
+      <i onclick="app.SandboxPicturesController.deletePicture('${this.id}')" class="mdi mdi-close-thick text-danger position-absolute top-0 fs-2" title="Delete Picture" role="button"></i>
+      <p class="position-absolute bottom-0 fs-2 selectable" title="Display this picture"  onclick="app.NasaPicturesController.getNasaPictureByDate('${this.date}')" role="button">${this.date}</p>
     </div>
     `
   }

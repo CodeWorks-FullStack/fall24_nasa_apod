@@ -30,6 +30,11 @@ export class SandboxPicturesController {
     }
   }
 
+  async deletePicture(pictureId) {
+    console.log('delete!', pictureId);
+
+  }
+
   drawMyPictures() {
     const pictures = AppState.myPictures
     let picturesHTML = ''
