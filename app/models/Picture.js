@@ -9,14 +9,14 @@ export class Picture {
   }
 
   get detailsHTMLTemplate() {
-    return `
-    <div>
-      <h1 class="text-center">${this.title}</h1>
-      <div class="text-end fs-4 mb-3">
-        <time datetime="${this.date}">${this.date}</time>
+    return /*html*/`
+      <div class="magic-text">
+        <h1 class="text-center">${this.title}</h1>
+        <div class="text-end fs-4 mb-3">
+          <time datetime="${this.date}">${this.date}</time>
+        </div>
+        <p class="secret-text">${this.explanation}</p>
       </div>
-      <p>${this.explanation}</p>
-    </div>
     `
   }
 }

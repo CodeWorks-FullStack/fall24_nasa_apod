@@ -24,5 +24,6 @@ export class NasaPicturesController {
     setHTML('picture-of-the-day', picture.detailsHTMLTemplate)
 
     document.body.style.backgroundImage = `url(${picture.imgUrl})`
+    setHTML('picture-copyright', '©️ ' + picture.copyright)
   }
 }
