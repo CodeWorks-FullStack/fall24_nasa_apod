@@ -1,8 +1,8 @@
 export class Picture {
   constructor(data) {
-    this.copyright = data.copyright
+    this.author = data.copyright
     this.date = data.date
-    this.explanation = data.explanation
+    this.description = data.explanation
     this.imgUrl = data.hdurl
     this.mediaType = data.media_type
     this.title = data.title
@@ -21,7 +21,7 @@ export class Picture {
           <button onclick="app.SandboxPicturesController.savePicture()" class="btn btn-outline-light"><i class="mdi mdi-heart"></i> Save</button>
           <time datetime="${this.date}">${this.date}</time>
         </div>
-        <p class="secret-text">${this.explanation}</p>
+        <p class="secret-text">${this.description}</p>
       </div>
     `
   }
