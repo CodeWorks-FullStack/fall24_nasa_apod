@@ -47,3 +47,15 @@ footer {
   height: 23vh;
   object-fit: cover;
 }
+
+.delete-icon {
+  position: absolute;
+  top: 0;
+  right: 6px;
+}
+
+.my-picture-date {
+  position: absolute;
+  bottom: 0;
+  left: 6px;
+}
