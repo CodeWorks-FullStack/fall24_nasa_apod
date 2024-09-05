@@ -4,6 +4,9 @@ import { api } from "./AxiosService.js"
 
 class SandboxPicturesService {
   async deletePicture(pictureId) {
+    // NOTE delete request
+    // This will delete a specific resource. The Id of the resource must be included in the request URL
+    // Delete requests do not have a body included
     const response = await api.delete(`api/apods/${pictureId}`)
     console.log('DELETED PICTURE', response.data);
 
@@ -13,6 +16,7 @@ class SandboxPicturesService {
   async getMyPictures() {
     const response = await api.get('api/apods')
     console.log('GOT MY PICTURES 📷🌌🛰️', response.data);
+    // NOTE we get an array of objects back from this request, so we need to map!
     const pictures = response.data.map(pictureData => new Picture(pictureData))
     AppState.myPictures = pictures
   }

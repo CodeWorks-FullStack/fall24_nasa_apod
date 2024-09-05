@@ -36,18 +36,19 @@ export class NasaPicturesController {
   }
 
 
-
   drawNasaPicture() {
     const picture = AppState.picture
     setHTML('picture-of-the-day', picture.detailsHTMLTemplate)
 
+    // NOTE sets the HTML body's background image
     document.body.style.backgroundImage = `url(${picture.imgUrl})`
-    setHTML('picture-copyright', '©️ ' + picture.author)
+
+    setHTML('picture-copyright', `©️ ${picture.author}`)
   }
 
   setDatePicker() {
     const datePickerElem = document.getElementById('date-picker')
-    const todaysDate = new Date().toISOString().substring(0, 10)
+    const todaysDate = new Date().toISOString().substring(0, 10) //formats a date as YYYY-MM-DD
 
     // @ts-ignore
     datePickerElem.value = todaysDate
