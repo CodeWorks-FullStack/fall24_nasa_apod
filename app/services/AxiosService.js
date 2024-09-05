@@ -13,7 +13,12 @@ export const api = axios.create({
 // @ts-ignore
 export const nasaAPI = axios.create({
   baseURL: 'https://api.nasa.gov',
-  timeout: 10000
+  timeout: 10000,
+  // NOTE anything added in here will always be added as a query parameter
+  params: {
+    // ?api_key=2DRMc8Ah0Y0rljaAOqEQtjiMY3f6ZrfswxzINUX1
+    api_key: '2DRMc8Ah0Y0rljaAOqEQtjiMY3f6ZrfswxzINUX1'
+  }
 })
 
 api.interceptors.request.use(config => config, handleAxiosError)

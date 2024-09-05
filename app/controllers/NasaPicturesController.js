@@ -42,7 +42,10 @@ export class NasaPicturesController {
   setDatePicker() {
     const datePickerElem = document.getElementById('date-picker')
     const todaysDate = new Date().toISOString().substring(0, 10)
+
+    // @ts-ignore
     datePickerElem.value = todaysDate
+    // @ts-ignore
     datePickerElem.max = todaysDate
   }
 }

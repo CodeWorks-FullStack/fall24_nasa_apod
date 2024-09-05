@@ -11,7 +11,12 @@ export class Picture {
   get detailsHTMLTemplate() {
     return /*html*/`
       <div class="magic-text">
-        <h1 class="text-center">${this.title}</h1>
+        <div class="d-flex gap-2 justify-content-center align-items-center">
+          <h1>${this.title}</h1>
+          <a href="${this.imgUrl}" target="_blank" class="text-light fs-1" title="See full size image!">
+            <i class="mdi mdi-camera"></i>
+          </a>
+        </div>
         <div class="text-end fs-4 mb-3">
           <time datetime="${this.date}">${this.date}</time>
         </div>
