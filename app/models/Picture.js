@@ -17,7 +17,8 @@ export class Picture {
             <i class="mdi mdi-camera"></i>
           </a>
         </div>
-        <div class="text-end fs-4 mb-3">
+        <div class="d-flex justify-content-between fs-4 mb-3">
+          <button onclick="app.SandboxPicturesController.savePicture()" class="btn btn-outline-light"><i class="mdi mdi-heart"></i> Save</button>
           <time datetime="${this.date}">${this.date}</time>
         </div>
         <p class="secret-text">${this.explanation}</p>
