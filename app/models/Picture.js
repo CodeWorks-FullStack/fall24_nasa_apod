@@ -7,6 +7,18 @@ export class Picture {
     this.mediaType = data.media_type
     this.title = data.title
   }
+
+  get detailsHTMLTemplate() {
+    return `
+    <div>
+      <h1 class="text-center">${this.title}</h1>
+      <div class="text-end fs-4 mb-3">
+        <time datetime="${this.date}">${this.date}</time>
+      </div>
+      <p>${this.explanation}</p>
+    </div>
+    `
+  }
 }
 
 const data = {
