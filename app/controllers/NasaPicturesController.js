@@ -19,17 +19,23 @@ export class NasaPicturesController {
       console.error(error)
     }
   }
-  async getNasaPictureByDate() {
+  async getNasaPictureByDate(date) {
     try {
-      const datePickerElem = document.getElementById('date-picker')
-      // @ts-ignore
-      const date = datePickerElem.value
       await nasaPicturesService.getNasaPictureByDate(date)
     } catch (error) {
       Pop.error(error)
       console.error(error)
     }
   }
+
+  getNasaPictureWithDatePicker() {
+    const datePickerElem = document.getElementById('date-picker')
+    // @ts-ignore
+    const date = datePickerElem.value
+    this.getNasaPictureByDate(date)
+  }
+
+
 
   drawNasaPicture() {
     const picture = AppState.picture

@@ -29,7 +29,7 @@ export class Picture {
   get listHTMLTemplate() {
     return `
      <div class="mb-3">
-      <img src="${this.imgUrl}" alt="${this.author} took this picture on ${this.date}" class="my-picture rounded">
+      <img onclick="app.NasaPicturesController.getNasaPictureByDate('${this.date}')" role="button" title="Display this picture" src="${this.imgUrl}" alt="${this.author} took this picture on ${this.date}" class="my-picture rounded">
     </div>
     `
   }
