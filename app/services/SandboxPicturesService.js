@@ -13,6 +13,8 @@ class SandboxPicturesService {
   async savePicture() {
     const response = await api.post('api/apods', AppState.picture)
     console.log('SAVED PICTURE 💾🌌📷', response.data);
+    const newPicture = new Picture(response.data)
+    AppState.myPictures.push(newPicture)
   }
 }
 
