@@ -6,6 +6,9 @@ class SandboxPicturesService {
   async deletePicture(pictureId) {
     const response = await api.delete(`api/apods/${pictureId}`)
     console.log('DELETED PICTURE', response.data);
+
+    const pictureIndex = AppState.myPictures.findIndex(picture => picture.id == pictureId)
+    AppState.myPictures.splice(pictureIndex, 1)
   }
   async getMyPictures() {
     const response = await api.get('api/apods')
